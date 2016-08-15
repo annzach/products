@@ -31,26 +31,7 @@ exports.getAll = function() {
   });
 };
 
-/*exports.getOne = function(productorganizer) 
-  return new Promise((resolve, reject) => {
-    let sql = squel.select()
-                   .from('productorganizer')
-                   .where('product = ?', product)
-                   .toString();
 
-    connection.query(sql, (err, productorganizer) => {
-      
-      if(err) {
-        reject(err);
-      } else if(!productorganizer) {
-        reject({error: 'entry found.'})
-      } else {
-        resolve(productorganizer);
-      }
-    });
-  });
-};
-*/
 
 exports.create = function(newproductorganizer) {
   return new Promise((resolve, reject) => {

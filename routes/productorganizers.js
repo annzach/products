@@ -3,9 +3,6 @@ const router = express.Router();
 const ProductOrganizer = require('../models/productorganizer');
 
 
-router.get('/test', (req, res) => {
-res.send("hi");
-});
 
 router.get('/', (req, res) => {
   ProductOrganizer.getAll()
