@@ -1,6 +1,7 @@
 const squel = require('squel').useFlavour('mysql');
 const uuid = require('uuid');
 const moment = require('moment');
+const mysql = require('mysql');
 
 const connection = require('../config/db');
 
@@ -16,6 +17,33 @@ connection.query(`create table if not exists productorganizer (
     }
   })
 
+exports.getTotal = function() {
+  console.log('getTotal');
+  return new Promise((resolve, reject) => {
+    connection.query(`select sum(price), sum(products) from productorganizer`, (err, products) => {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(products);
+        console.log(products);
+     
+      }
+    });
+  });
+};
+exports.getAll = function() {
+  return new Promise((resolve, reject) => {
+    let sql = squel.select().from('productorganizer').toString();
+
+    connection.query(sql, (err, product) => {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(product);
+      }
+    });
+  });
+};
 
 exports.getAll = function() {
   return new Promise((resolve, reject) => {

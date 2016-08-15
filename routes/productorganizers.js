@@ -14,6 +14,16 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get(`/total/`, (req, res) => {
+  ProductOrganizer.getTotal()
+    .then(productorganizer => {
+      res.send(productorganizer);
+    })
+    .catch(err => {
+      res.status(400).send(err);
+    });
+});
+
 router.get('/:id', (req, res) => {
   ProductOrganizer.getOne(req.params.id)
     .then(productorganizer => {
