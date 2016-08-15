@@ -20,7 +20,7 @@ connection.query(`create table if not exists productorganizer (
 exports.getTotal = function() {
   console.log('getTotal');
   return new Promise((resolve, reject) => {
-    connection.query(`select sum(price), sum(products) from productorganizer`, (err, products) => {
+    connection.query(`select sum(price), sum(description) from productorganizer`, (err, products) => {
       if(err) {
         reject(err);
       } else {

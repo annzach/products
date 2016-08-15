@@ -47,6 +47,25 @@ const Display = React.createClass({
 
   },
 
+  total:function(){
+   var url=`/productorganizer/total`
+    fetch(url,
+    {
+      method: "GET",
+      headers : {
+        "Content-type":"application/json"
+      }   
+    })
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      
+      this.setState({data:data});
+    })
+    .catch(err => console.log('err','err'))
+
+  },
   
   
   render(){
@@ -55,6 +74,7 @@ const Display = React.createClass({
       <div>
         <div>
            <button  onClick ={this.getMe} >Display</button>
+           <button onClick={this.total}>Total</button>
         </div>
         <DataDisplay data = {this.state.data} delete={this.DeleteMe} modify ={this.ModifyMe}/>
       </div>
