@@ -9,9 +9,8 @@ render(){
       <div>
         <h1 id="bhTitle">ProductOrganizer</h1>
         <hr/>
-      
-        
-        {this.props.children}
+
+
       </div>
     )
   }
