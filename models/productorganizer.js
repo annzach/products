@@ -45,21 +45,6 @@ exports.getAll = function() {
   });
 };
 
-exports.getAll = function() {
-  return new Promise((resolve, reject) => {
-    let sql = squel.select().from('productorganizer').toString();
-
-    connection.query(sql, (err, product) => {
-      if(err) {
-        reject(err);
-      } else {
-        resolve(product);
-      }
-    });
-  });
-};
-
-
 
 exports.create = function(newproductorganizer) {
   return new Promise((resolve, reject) => {

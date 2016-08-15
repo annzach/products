@@ -54,7 +54,7 @@ const Display = React.createClass({
     return (
       <div>
         <div>
-       <button  value="btn0" onClick ={this.getMe} >Display</button>
+           <button  onClick ={this.getMe} >Display</button>
         </div>
         <DataDisplay data = {this.state.data} delete={this.DeleteMe} modify ={this.ModifyMe}/>
       </div>
@@ -82,7 +82,7 @@ const DataDisplay = React.createClass({
         return(
           <tr key ={info.id}>
             <td>{info.name}</td>
-            <td>{info.product}</td>
+            <td>{info.description}</td>
             <td>{info.price}</td>
             <td><button value ={info.id} onClick ={this.DeleteMe}>Delete</button>
                  <button onClick={this.ModifyMe}>Modify</button></td>

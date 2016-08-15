@@ -12,11 +12,11 @@ const Registration = React.createClass({
     this.setState({name:event.target.value});
  
   },
-  onInputChangeDesc: function(event){
+  onInputChangeProduct: function(event){
     this.setState({description:event.target.value});
 
   },
-  OnInputChangeProduct: function(event){
+  onInputChangeDesc: function(event){
     this.setState({price:event.target.value});
   },
   addProduct: function() {
@@ -37,8 +37,8 @@ const Registration = React.createClass({
       <div> 
         
           <li><input type="text" value ={this.state.name} placeholder = "Name" onChange = {this.onInputChange}/></li>
-          <li><input type="text" value ={this.state.product}placeholder = "Product" onChange = {this.onInputChangeProduct} /></li>
-          <li><input type="text" value ={this.state.description}placeholder = "Description" onChange ={this.onInputChangeDesc}/></li>
+          <li><input type="text" value ={this.state.description}placeholder = "Description" onChange = {this.onInputChangeProduct} /></li>
+          <li><input type="text" value ={this.state.price}placeholder = "Price" onChange ={this.onInputChangeDesc}/></li>
           
           <button className="btn btn-success btn-sm" onClick={this.addProduct}>submit</button>
         

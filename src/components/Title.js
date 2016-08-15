@@ -3,9 +3,7 @@ import {render} from 'react-dom'
 import {Link} from 'react-router'
 
 const Title = React.createClass({
-componentDidMount : function(){
-    console.log(this.props);
-  },
+
 
 
 render(){
